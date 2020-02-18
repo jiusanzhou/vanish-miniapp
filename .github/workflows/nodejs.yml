@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [8.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -22,8 +22,8 @@ jobs:
       env:
         CI: true
     - run: |
-        echo Publish to github
-        git checkout -b $TARGET_BRANCH
+        echo "Publish to github"
+        git checkout -b gh-pages
         git rm -rf .
         rm -rf node_modules
         mv build/* .
@@ -31,4 +31,4 @@ jobs:
         git add -f --ignore-errors --all
         git -c user.name='Zoe' -c user.email='hi@zoe.im' commit -m ":tada: release ui"
         ls -al
-        git push -f -q https://$GH_USER:$GH_TOKEN@github.com/$BUILD_REPOSITORY_ID $TARGET_BRANCH
+        git push -f -q https://$GH_USER:$GH_TOKEN@github.com/$BUILD_REPOSITORY_ID gh-pages

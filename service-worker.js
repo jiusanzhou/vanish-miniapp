@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/vanish-miniapp/precache-manifest.863d677e3edd9d2c2b30d24c62481eff.js"
+  "/vanish-miniapp/precache-manifest.99856ec39ac5075d2124fe841b6eba55.js"
 );
 
 self.addEventListener('message', (event) => {
